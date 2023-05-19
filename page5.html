@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Web Page</title>
+    <script>
+        console.log('hello world!');
+    </script>
+    <link rel="stylesheet" href="mystyle.css">
+
+</head>
+
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page2.html">About Me</a></li>
+        <li><a href="page3.html">About the skills</a></li>
+        <li><a href="page4.html">My Works</a></li>
+        <li><a class="active" href="page5.html">Rate My Works and Page</a></li>
+
+    </ul>
+    <!--My Nav Bar-->
+    <h1 class="heading1 header">Leave a Rating:</h1>
+    <form id="myForm">
+        <div class="container">
+            <label for="web" class="rating" >Rate the website:</label><br>
+            <input type="radio" id="1" name="web" value="1">
+            <label for="1" class="rating">1</label><br>
+            <input type="radio" id="2" name="web" value="2">
+            <label for="2" class="rating">2</label><br>
+            <input type="radio" id="3" name="web" value="3">
+            <label for="3" class="rating">3</label><br>
+            <input type="radio" id="4" name="web" value="4">
+            <label for="4" class="rating">4</label><br>
+            <input type="radio" id="5" name="web" value="5">
+            <label for="5" class="rating">5</label><br>
+        </div>
+
+        <div class="container">
+            <label for="work" class="rating">Rate my Works:</label><br>
+            <input type="radio" id="6" name="work" value="6">
+            <label for="6" class="rating">1</label><br>
+            <input type="radio" id="7" name="work" value="7">
+            <label for="7" class="rating">2</label><br>
+            <input type="radio" id="8" name="work" value="8">
+            <label for="8" class="rating">3</label><br>
+            <input type="radio" id="9" name="work" value="9">
+            <label for="9" class="rating">4</label><br>
+            <input type="radio" id="10" name="work" value="10">
+            <label for="10" class="rating">5</label><br>
+        </div>
+
+        <textarea name="comments" id="comments" style="width:92%;height:5vw;padding:2%;font-size:1.2em;border:12px ridge #A68A56;">
+Is there anything I should change?
+    </textarea><br>
+
+        <input type="submit" style="background-color: white; color: black; border: 2px solid #13294B;" value="Submit">
+
+    </form>
+
+    <script>
+        var form= document.getElementById("myForm");
+    form.addEventListener("submit", function(event){
+    event.preventDefault();
+    var website= document.getElementById("web").value;
+    
+    var formContents= document.getElementById("formContentsHere");
+    formContents.innerHTML = "You rated my site as a " + website + "out of 5!";
+   });
+   </script>
+       <div id="formContentsHere"></div>
+
+</body>
+
+</html>
